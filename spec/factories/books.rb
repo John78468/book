@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :book do
-    title { "MyString" }
-    description { "MyString" }
-    page_count { 1 }
-    published_at { "2024-01-19" }
-    author { "MyString" }
+    title { Faker::Book.title }
+    description {Faker::Lorem.paragraph }
+    page_count { rand(80..500) }
+    published_at { Faker::Date.between(from: 20.years.ago, to: Date.yesterday) }
+    author { Faker::Book.author }
   end
 end

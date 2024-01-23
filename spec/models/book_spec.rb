@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Book, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:book) { FactoryBot.build(:book) }
+  it "can be instanciaed" do
+    expect(book).not_to be nil
+  end
+
+  it "can be saved" do
+    expect(book.save).to be true
+  end
 end
